@@ -44,6 +44,32 @@ En la lista de procesos, se ven las columnas donde se obtiene esta información:
 (tomado de: Nmap - Port Scanner - BlackArch Linux #30, YouTube)\
 `lynis`:
 <img width="1300" height="736" alt="image" src="https://github.com/user-attachments/assets/b0ac0657-eb7c-413b-8723-35184c8ec61d" />
+## Punto 2: ¿Qué es Ipv4 e Ipv6? y ¿Qué comandos se usan en ubuntu para explorar sus direcciones?
+### IPv4
+Protocolo de Internet versión 4: esquema de direccionamiento de 32 bits representado en notación decimal punteada (ej. 192.0.2.1). Define las reglas para encaminar paquetes entre hosts, incluye mecanismos como ARP y NAT ampliamente usados por la escasez de direcciones. Es simple y ampliamente compatible, pero limitado en espacio de direcciones (~4.3×10⁹ direcciones), lo que motivó técnicas de conservación (NAT, subredes) y la adopción de IPv6.
+### IPv6
+Protocolo de Internet versión 6: reemplazo de IPv4 con direcciones de 128 bits (ej. 2001:db8::1) que proporciona un espacio de direcciones prácticamente ilimitado. Introduce mejoras de diseño: dirección masiva para asignación global sin NAT, autoconfiguración (stateless address autoconfiguration), encabezado simplificado con extensiones movidas fuera del encabezado base, mejor soporte para multicast y movilidad, y facilidades que simplifican el enrutamiento. IPv6 coexiste con IPv4 mediante mecanismos de transición (dual-stack, túneles, traductores).
+### Comandos
+* `ip addr show` — muestra todas las direcciones (IPv4 e IPv6) asignadas a las interfaces.
+* `ip -4 addr show` — filtra y muestra solo direcciones IPv4.
+* `ip -6 addr show` — filtra y muestra solo direcciones IPv6.
+* `hostname -I` — muestra las direcciones IP asignadas al host (rápido resumen).
+* `ip route show` — muestra la tabla de ruteo IPv4.
+* `ip -6 route show` — muestra la tabla de ruteo IPv6.
+* `ip neigh` — muestra la tabla ARP/vecinos (relaciona IP ↔ MAC para IPv4/IPv6).
+* `ping / ping -6` — comprobar conectividad IPv4 o IPv6 hacia un destino.
+* `nmcli device show` — si usas NetworkManager, muestra configuraciones y direcciones por dispositivo.
+
+<img width="832" height="267" alt="image" src="https://github.com/user-attachments/assets/6f29985b-14fb-4fac-9845-3bb6bff1b174" />
+<img width="631" height="141" alt="image" src="https://github.com/user-attachments/assets/5aebb146-3137-4dcf-b56d-271d506402a5" />
+
+Los comandos comprobados fueron ejecutados en arch-linux con ayuda de QEMU/KVM.\
+Con este comando se actualiza el sistema:
+<img width="1299" height="735" alt="image" src="https://github.com/user-attachments/assets/a457a7f2-4dde-4b55-9389-43d13ca95c81" />
+Y ya podemos utilizar archlinux para ejecutar todos los comandos vistos anteriormente.
+
+
+
 
 
 
